@@ -2,6 +2,65 @@
  History
 =========
 
+v0.4.12
+=======
+* Fix typo in theme CSS rule. (`@vkoby`_)
+  `#144 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/144>`_.
+
+v0.4.11
+=======
+* Fix logo sizing issue on mobile with RTD.
+  `#142 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/142>`_.
+
+
+v0.4.10
+=======
+* Fix logo / brand title wrapping bug. (`@miketheman`_)
+  `#141 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/141>`_.
+
+v0.4.9
+======
+* Update to Bootstrap v3.3.6 and Bootswatch v3.3.6+1. (`@ppyv`_)
+
+v0.4.8
+======
+* Fix sidenav overflow / scrolling.
+  `#136 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/136>`_.
+
+v0.4.7
+======
+* Fix jumpy sidenav
+  `#131 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/pull/131>`_.
+  (`@cslarsen`_)
+
+v0.4.6
+======
+* Switch demo to "sandstone" theme.
+* Update to Bootswatch v3.3.4+1.
+* Update to Bootstrap v3.3.4.
+* Update Sphinx website links. (`@mrmsl`_)
+
+v0.4.5
+======
+* Add Glyphicon fonts to Bootswatch 2 static assets. Also add example using the
+  icons so we can catch errors like this better in the future.
+* Fix CSS generation with ``'navbar_fixed_top': "false"`` and
+  ``'bootstrap_version': "2"``.
+  Fixes `#121 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/issues/121>`_.
+  (`@EricFromCanada`_)
+
+v0.4.4
+======
+* Reset ``.container`` padding after Sphinx 1.3b commit overrode CSS.
+  Fixes `#114 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/issues/114>`_.
+  (`@EricFromCanada`_)
+* Fix situation where Python 3 + modern Sphinx results in empty strings being
+  interpreted as a non-existent Bootswatch theme for
+  ``theme_bootswatch_theme`` by permissively allowing old (empty quotes) or
+  new (empty or ``None``) styles.
+  Fixes `#115 <https://github.com/ryan-roemer/sphinx-bootstrap-theme/issues/115>`_.
+  (`@EricFromCanada`_, `@peteut`_, `@mdboom`_)
+
 v0.4.3
 ======
 * Add ``fonts/`` directories to bootswatch. (`@gkthiruvathukal`_)
@@ -195,7 +254,9 @@ v0.0.1
 .. _@aababilov: https://github.com/aababilov
 .. _@adamcharnock: https://github.com/adamcharnock
 .. _@cdbennett: https://github.com/cdbennett
+.. _@cslarsen: https://github.com/cslarsen
 .. _@Danack: https://github.com/Danack
+.. _@EricFromCanada: https://github.com/EricFromCanada
 .. _@fjfeijoo: https://github.com/fjfeijoo
 .. _@gkthiruvathukal: https://github.com/gkthiruvathukal
 .. _@grncdr: https://github.com/grncdr
@@ -203,14 +264,20 @@ v0.0.1
 .. _@kaycebasques: https://github.com/kaycebasques
 .. _@kosiakk: https://github.com/kosiakk
 .. _@masklinn: https://github.com/masklinn
+.. _@mdboom: https://github.com/mdboom
 .. _@MiCHiLU: https://github.com/MiCHiLU
+.. _@miketheman: https://github.com/miketheman
+.. _@mrmsl: https://github.com/mrmsl
 .. _@nail: https://github.com/nail
 .. _@newgene: https://github.com/newgene
 .. _@oscarcp: https://github.com/oscarcp
+.. _@peteut: https://github.com/peteut
+.. _@ppyv: https://github.com/ppyv
 .. _@russell: https://github.com/russell
 .. _@sccolbert: https://github.com/sccolbert
 .. _@shiumachi: https://github.com/shiumachi
 .. _@thedrow: https://github.com/thedrow
 .. _@torbjoernk: https://github.com/torbjoernk
 .. _@tristanlins: https://github.com/tristanlins
+.. _@vkoby: https://github.com/vkoby
 .. _@zyga: https://github.com/zyga

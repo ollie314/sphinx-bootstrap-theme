@@ -4,12 +4,12 @@
 
 This Sphinx_ theme_ integrates the Bootstrap_ CSS / JavaScript
 framework with various layout options, hierarchical menu navigation,
-and mobile-friendly responsive design. It is configurable, extensible
+and mobile-friendly responsive design. It is configurable, extensible,
 and can use any number of different Bootswatch_ CSS themes.
 
 .. _Bootstrap: http://getbootstrap.com/
-.. _Sphinx: http://sphinx.pocoo.org/
-.. _theme: http://sphinx.pocoo.org/theming.html
+.. _Sphinx: http://sphinx-doc.org/
+.. _theme: http://sphinx-doc.org/theming.html
 .. _PyPI: http://pypi.python.org/pypi/sphinx-bootstrap-theme/
 .. _GitHub repository: https://github.com/ryan-roemer/sphinx-bootstrap-theme
 
@@ -27,9 +27,10 @@ The theme is introduced and discussed in the following posts:
 Examples of the theme in use for some public projects:
 
 * `Sphinx Bootstrap Theme`_: This project, with the theme option
-  ``'bootswatch_theme': "flatly"`` to use the "Flatly_" Bootswatch_ theme.
+  ``'bootswatch_theme': "sandstone"`` to use the "Sandstone_" Bootswatch_ theme.
 * `Django Cloud Browser`_: A Django reusable app for browsing cloud
   datastores (e.g., Amazon Web Services S3).
+* `C++ Format`_: Small, safe and fast formatting library for C++.
 
 The theme demo website also includes an `examples page`_ for some useful
 illustrations of getting Sphinx to play nicely with Bootstrap (also take a
@@ -38,10 +39,12 @@ look at the `examples source`_ for the underlying reStructuredText).
 .. _Bootswatch: http://bootswatch.com
 .. _United: http://bootswatch.com/united
 .. _Flatly: http://bootswatch.com/flatly
+.. _Sandstone: http://bootswatch.com/sandstone
 .. _Sphinx Bootstrap Theme: http://ryan-roemer.github.com/sphinx-bootstrap-theme
 .. _examples page: http://ryan-roemer.github.com/sphinx-bootstrap-theme/examples.html
 .. _examples source: http://ryan-roemer.github.com/sphinx-bootstrap-theme/_sources/examples.txt
 .. _Django Cloud Browser: http://ryan-roemer.github.com/django-cloud-browser
+.. _C++ Format: http://cppformat.readthedocs.org
 
 
 Installation
@@ -134,7 +137,7 @@ your "conf.py" file::
 
         # Bootswatch (http://bootswatch.com/) theme.
         #
-        # Options are nothing with "" (default) or the name of a valid theme
+        # Options are nothing (default) or the name of a valid theme
         # such as "amelia" or "cosmo".
         'bootswatch_theme': "united",
 
@@ -150,8 +153,9 @@ both contain version strings, which the navigation bar treats differently.
 
 Bootstrap Versions
 ------------------
-The theme supports Bootstrap v2.3.2 and v3.0.0 via the ``bootstrap_version``
-theme option (of ``"2"`` or ``"3"``). Some notes regarding version differences:
+The theme supports Bootstrap ``v2.3.2`` and ``v3.3.4`` via the
+``bootstrap_version`` theme option (of ``"2"`` or ``"3"``). Some notes
+regarding version differences:
 
 * Bootstrap 3 has dropped support for `sub-menus`_, so while supported by this
   theme, they will not show up in site or page menus.
@@ -259,6 +263,15 @@ Then, view the site in the development server::
 
 Also, if you are adding a new type of styling or Sphinx or Bootstrap construct,
 please add a usage example to the "Examples" page.
+
+**Note**: If you are in Python 3, Fabric isn't available, so we have a very
+rough Makefile in its place. Try::
+
+    $ make clean && make demo
+
+Then, view the site in the development server::
+
+    $ make demo_server
 
 
 Licenses

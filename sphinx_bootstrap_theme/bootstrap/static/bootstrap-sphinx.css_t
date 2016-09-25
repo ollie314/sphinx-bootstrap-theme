@@ -1,36 +1,58 @@
 /*
-* bootstrap-sphinx.css
-* ~~~~~~~~~~~~~~~~~~~~
-*
-* Sphinx stylesheet -- Bootstrap theme.
-*/
+ * bootstrap-sphinx.css
+ * ~~~~~~~~~~~~~~~~~~~~
+ *
+ * Sphinx stylesheet -- Bootstrap theme.
+ */
 
 .navbar-inverse .brand {
   color: #FFF;
+}
+
+/*
+ * Reset navbar styles from overrides in:
+ * https://bitbucket.org/birkenfeld/sphinx/commits/78d8ebf76b630ab4073a7328af9d91e8123b8d96
+ */
+.navbar .container {
+  padding-top: 0;
+}
+
+/*
+ * Reset the logo image dimensions. Sites like RTD can override with bad
+ * results on mobile (mega-huge logo...)
+ *
+ * https://github.com/ryan-roemer/sphinx-bootstrap-theme/issues/142
+ */
+.navbar-brand img {
+  width: auto;
+  height: 100%;
 }
 
 .page-top {
   top: 0px;
 }
 
+{% if theme_navbar_fixed_top|tobool %}
+
 {% if theme_bootstrap_version == "2" %}
 @media (min-width: 980px) {
 {% endif %}
-  {% if theme_navbar_fixed_top|tobool %}
+
   body {
-  {% if theme_bootswatch_theme %}
-    padding-top: 60px;
-  {% else %}
-    padding-top: 40px;
-  {% endif %}
+    {% if theme_bootswatch_theme and theme_bootswatch_theme != "\"\"" %}
+      padding-top: 60px;
+    {% else %}
+      padding-top: 40px;
+    {% endif %}
   }
   .page-top {
-  {% if theme_bootswatch_theme %}
-    top: 60px;
-  {% else %}
-    top: 40px;
-  {% endif %}
+    {% if theme_bootswatch_theme and theme_bootswatch_theme != "\"\"" %}
+      top: 60px;
+    {% else %}
+      top: 40px;
+    {% endif %}
   }
+
 {% if theme_bootstrap_version == "2" %}
 }
 {% endif %}
@@ -39,6 +61,14 @@
   padding-left:  12px !important;
   padding-right: 12px !important;
 }
+{% else %}
+{% if theme_bootstrap_version == "2" %}
+@media (min-width: 980px) {
+  .navbar .container {
+    width: 940px;
+  }
+}
+{% endif %}
 {% endif %}
 
 table {
@@ -162,7 +192,6 @@ table.field-list {
   }
   .bs-sidenav.affix {
     position: fixed; /* Undo the static from mobile first approach */
-    top: 80px;
   }
   .bs-sidenav.affix-bottom {
     position: absolute; /* Undo the static from mobile first approach */
